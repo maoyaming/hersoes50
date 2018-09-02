@@ -1,7 +1,8 @@
 <template>
 <div>
     <h2 class="sub-header">人物列表---------------</h2>
-        <a class="btn btn-success" href="add.html">Add</a>
+        <!-- <a  href="add.html">Add</a> -->
+        <router-link class="btn btn-success" to="/heroes/add">Add</router-link>
         <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -18,7 +19,8 @@
                 <td>{{item.name}}</td>
                 <td>{{item.gander}}</td>
                 <td>
-                <a href="edit.html">添加</a>
+                <!-- <a href="edit.html" >添加</a>   给添加配置路由 -->
+                <!-- <router-link to="/heroes/add">添加</router-link> -->
                 &nbsp;&nbsp;
                 <a href="javascript:;" @click.prevent="handleDelete(item.id)">删除</a>
                 </td>
@@ -34,7 +36,7 @@
 <script>
 
     import axios from 'axios';
-
+// 点击添加 路由跳转  
     export default{
         data(){
             return {
