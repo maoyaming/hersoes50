@@ -1,5 +1,6 @@
 <template>
 <div>
+    <h2 class="sub-header">添加 人物</h2>
     <form>
         <div class="form-group">
             <label for="exampleInputEmail1">添加人物</label>

@@ -17,10 +17,10 @@
             <tr v-for="(item,index) in list" :key="item.id">
                 <td>{{ index+1 }}</td>
                 <td>{{item.name}}</td>
-                <td>{{item.gander}}</td>
+                <td>{{item.gender}}</td>
                 <td>
                 <!-- <a href="edit.html" >添加</a>   给添加配置路由 -->
-                <!-- <router-link to="/heroes/add">添加</router-link> -->
+                <router-link :to="'/heroes/edit/' + item.id">修改</router-link>
                 &nbsp;&nbsp;
                 <a href="javascript:;" @click.prevent="handleDelete(item.id)">删除</a>
                 </td>
