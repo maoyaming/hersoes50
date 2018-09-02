@@ -20,7 +20,6 @@
 
     // 绑定文本框
     // 导入axios
-    import axios from 'axios';
     // 点击按钮 获取post 过去的数据 发送post请求
     // 添加成功 重新加载
     export default {
@@ -34,7 +33,7 @@
         },
         methods:{
             handelAdd(){
-                axios.post('http://localhost:3000/heroes',this.formData)
+                 this.$http.post('heroes',this.formData)
                     .then((msg)=>{
                         if(msg.status === 201){
                             alert('添加成功');

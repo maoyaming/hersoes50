@@ -20,7 +20,6 @@
 
     // 绑定文本框
     // 导入axios
-    import axios from 'axios';
 
     // 点击按钮 获取post 过去的数据 发送post请求
     // 添加成功 重新加载
@@ -41,7 +40,7 @@
         
         methods:{
            loadData(){
-               axios.get(`http://localhost:3000/heroes/${this.id}`)
+                this.$http.get(`heroes/${this.id}`)
                    .then((msg)=>{
                        this.formData = msg.data
                    }) 
@@ -51,7 +50,7 @@
                    })
            },
            handleEdit(){
-               axios.put(`http://localhost:3000/heroes/${this.id}`,this.formData)
+                this.$http.put(`heroes/${this.id}`,this.formData)
                 .then((msg)=>{
                     if(msg.status == 200){
                         this.$router.push('/heroes')

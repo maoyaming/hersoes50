@@ -35,7 +35,7 @@
 </template>
 <script>
 
-    import axios from 'axios';
+
 // 点击添加 路由跳转  
     export default{
         data(){
@@ -49,7 +49,7 @@
         },
         methods:{
             loadData(){
-                axios.get('http://localhost:3000/heroes')
+                this.$http.get('heroes')
                 .then((msg)=>{
                     if(msg.status === 200){
                         this.list = msg.data
@@ -64,7 +64,7 @@
                 if(!confirm('Are you sure?')){
                     return
                 }
-                axios.delete(`http://localhost:3000/heroes/${id}`)
+                this.$http.delete(`heroes/${id}`)
                     .then((msg)=>{
                         if(msg.status == 200){
                             alert('删除成功');
